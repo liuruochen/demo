@@ -16,8 +16,8 @@
   * [代码地址](https://github.com/15515179583/demo/tree/master/demo)
   
 * 小米商城
-  * [demo]()
-  * [代码地址]()
+  * [demo](https://15515179583.github.io/demo/mi/index.html)
+  * [代码地址](https://github.com/15515179583/demo/tree/master/mi)
 
 ### 随机样例生成器
 一个样例生成器，可以随机生成oj的测试数据
