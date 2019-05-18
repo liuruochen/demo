@@ -1,0 +1,13 @@
+.info-content{
+    list-style: none;
+}
+p{
+    text-indent: 2em;
+}
+img{
+    float: right;
+}
+h3{
+    font-size: 23px;
+    color: rgb(22, 136, 156);
+}

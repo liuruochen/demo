@@ -1,0 +1,18 @@
+.imgSet{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.imgSet img{
+    margin: 15px 0 0 0;
+}
+p{
+    text-indent:2em;
+}
+li{
+    list-style: none;
+}
+h3{
+    font-size: 23px;
+    color: rgb(22, 136, 156);
+}

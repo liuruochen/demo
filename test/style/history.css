@@ -1,0 +1,11 @@
+.history-item{
+    margin-top:15px;
+}
+.history-item:hover{
+    cursor: pointer; 
+    color: aquamarine;
+}
+h3{
+    font-size: 23px;
+    color: rgb(22, 136, 156);
+}

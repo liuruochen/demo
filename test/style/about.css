@@ -1,0 +1,38 @@
+ul{
+    list-style: none;
+}
+h3{
+    font-size: 23px;
+    color: rgb(22, 136, 156);
+}
+.card-list{
+    border: 1px solid rgb(86, 183, 207);
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.card-item{
+    display: block;
+    margin-bottom: 20px;
+   /* background-color:rgb(86, 183, 207); */
+    width: 450px;
+}
+.key,.value{
+    display:inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 18px;
+    color: antiquewhite;
+}
+.key{
+    width: 140px;
+    background-color:rgb(83, 174, 190); 
+}
+.value{
+    width:305px;
+    color: aliceblue;
+    background-color:rgb(102, 185, 211); 
+}
