@@ -1,0 +1,24 @@
+windows到Linux
+
+⑴用到的工具:阿里云服务器,Putty
+⑵步骤
+	①登陆云服务器查看是否开放22端口
+		若无则需在防火墙栏的列表中添加SSH
+			应用类型:SSH 
+			协议:TCP 
+			端口:22
+	②设置链接密码
+	③windows上下载并安装Putty----------默认选项
+	④在windows上运行cmd切换到putty的安装目录xia
+	⑤输入pscp命令
+		命令格式为:
+			pscp 文件所在路径 主机名@ip地址:需要存放的位置 
+			pscp D:\recyclebin.sql root@ip地址:/root/installpackage/
+	
+	⑥输入主机的链接密码
+	⑦等待传输.
+
+
+
+命令大全:
+	https://www.cnblogs.com/accumulater/p/7110811.html

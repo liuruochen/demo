@@ -1,0 +1,43 @@
+1.动画
+	一.动画的定义
+		⑴动画的名称:animation-name
+		⑵完成一次动画所需要的时间:animation-duration
+			默认为0s
+		⑶动画的播放速度:animation-timing-function
+			默认为ease
+				ease:动画以低速开始,然后加快,在结束前变慢
+				linear:从开始到结束匀速
+		⑷动画的等待时长:animation-delay
+			默认为0s
+		⑸动画的播放次数:animation-iteration-count
+			默认为1次
+				infinite:动画播放无限次
+		⑹动画的反播:animation-direction
+			默认为normal
+				alternate:实现动画反播(播放次数必须大于1才可实现)
+		⑺动画的暂停:animation-play-state
+			默认为:running
+				paused:规定动画暂停
+		例:
+		animation: move 1s infinite alternate;
+			此动画的名称为move,播放一次耗时1s,可播放无限次,并且正反来回播放
+	二.动画的绑定
+		①@keyframes move{
+			from{}
+			to{}
+		}
+		②@keyframes move{
+			0%{}
+			50%{}
+			100%{}
+		}
+	三.动画中常用的变换
+		默认为:none(即无变换)
+		⑴改变显示的位置translate(水平,竖直)
+			①translate(10px)	向右移动10px显示
+			②translate(30px,40px)	向右移动30px,向下移动40px显示
+		⑵改变显示的大小scale(水平倍数,竖直倍数)
+			①scale(2,2)		变为原来的2倍显示
+			②scale(0.5,0.5)		变为原来的一半显示
+		⑶旋转rotate(角度)
+			①rotate(45deg)		顺时针旋转45°后显示

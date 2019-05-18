@@ -1,0 +1,43 @@
+边框border
+	⑴边框分解
+		①border-top		上边框
+		②border-right		右边框
+		③border-bottom		下边框
+		④border-left		左边框
+		⑤outline		所有轮廓
+	⑵颜色
+	⑶样式
+		①none		无边框
+		②hidden		与none相同,对于表,hidden用于解决边框冲突
+		③dotted		定义点状边框。在大多数浏览器中呈现为实线。
+		④dashed		定义虚线。在大多数浏览器中呈现为实线。
+		⑤solid		定义实线。
+		⑥double		定义双线。
+		⑦inherit	规定应该从父元素继承边框样式。
+	⑷宽度
+		①thin	 	定义细的边框。
+		②medium 	默认。定义中等的边框。
+		③thick 		定义粗的边框。
+		④length 	允许您自定义边框的宽度。
+		⑤inherit 	规定应该从父元素继承边框宽度。
+	
+	⑸圆角
+		border-radius:左上 右上 右下 左下;
+			①border-radius:20px;
+				四个角水平与竖直都为20px
+			②border-radius:30px 0 30px 0;
+				左上,右下为30px,其他原值
+			③border-radius:50%;
+				圆形或椭圆
+			④border-radius:165px/50px;
+				水平圆角165px,竖直圆角50px
+	⑹图片
+		①border-image-outset 	规定边框图像区域超出边框的量。
+		②border-image-repeat 	图像边框是否应平铺
+			㈠stretch	拉伸图像来填充区域
+			㈡repeat		平铺（重复）图像来填充区域。
+			㈢round		类似 repeat 值。如果无法完整平铺所有图像，
+					则对图像进行缩放以适应区域。
+		③border-image-slice 	规定图像边框的向内偏移。
+		④border-image-source 	规定用作边框的图片。
+		⑤border-image-width 	规定图片边框的宽度。

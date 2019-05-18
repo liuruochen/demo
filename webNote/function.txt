@@ -1,0 +1,40 @@
+function Ball(){}//小球的构造函数
+		Ball.prototype={
+			init:function(){
+				this.x = random(0,mycanvas.width)
+				this.y = random(0,mycanvas.height)
+				this.r = random(3,8)
+				this.xSpeed = random(-1,1)
+				this.ySpeed = random(-1,1)
+				this.color = ballColor[Math.floor(random(0,ballColor.length))]
+			},
+			draw:function(){
+				cxt.fillStyle = this.color
+				cxt.beginPath()
+				cxt.arc(this.x,this.y,this.r,0,Math.PI*2)
+				//console.log(this.x,this.y,this.r)
+				cxt.closePath()
+				cxt.fill()
+				cxt.restore()
+			},
+			move:function(){
+				if(this.x<0||this.x>mycanvas.width)
+					this.xSpeed=-this.xSpeed
+				if(this.y<0||this.y>mycanvas.height)
+					this.ySpeed=-this.ySpeed
+				this.x+=this.xSpeed
+				this.y+=this.ySpeed
+				this.draw()
+				console.log(this.x,this.xSpeed)
+			}
+		}
+
+
+function createBall(){
+			for(var i=0;i<100;i++){
+				var ball = new Ball()
+				ball.init()
+				ball.draw()
+				ballSet.push(ball)
+			}
+		}

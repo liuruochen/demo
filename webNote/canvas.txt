@@ -1,0 +1,27 @@
+const mycanvas = document.querySelector("#mycanvas")//获取canvas元素
+		const cxt = mycanvas.getContext('2d')				//获取画笔
+		~function init(){
+			mycanvas.width='500'
+			mycanvas.height='500'
+			console.log(mycanvas)
+		}()
+        
+		~function drawCicle(){
+			cxt.save()//保存路径
+			cxt.beginPath()//开始路径
+			cxt.fillStyle='pink'//画笔颜色
+			cxt.arc(200,200,100,0,Math.PI*1)//圆属性(圆心坐标,圆半径,开始弧度,结束弧度,顺/逆时针)
+			cxt.closePath()//闭合路径
+			cxt.fill()//绘画
+			cxt.restore()//释放路径(抬笔)
+		}()
+
+		~function drawLine(){
+			cxt.beginPath()//开始路径
+			cxt.moveTo(0,0)//开始点
+			cxt.closePath()//闭合路径
+			cxt.lineTo(50,300)
+			cxt.lineTo(500,500)
+			cxt.stroke()
+			cxt.restore()//释放路径(抬笔)
+		}()

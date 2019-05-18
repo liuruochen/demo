@@ -1,0 +1,29 @@
+1.警告弹窗(网页出现弹框,内容为"hello")
+alert("hello");
+//-------------------------------------------------------
+
+2.确认弹窗  (网页弹出可选择弹框,内容为"你好吗?")
+confirm("你好吗?");
+用法:-------将结果x传给id为demo的标签
+var r=confirm("你好吗?");
+if(r==true)
+{
+x = "你按下了确定按钮";
+}
+else
+{
+x="你按下了取消按钮";
+}
+document.getElementById("demo").innerHTML=x;
+//-------------------------------------------------------
+
+3.提示弹窗  
+prompt("说明提示的信息","要输入的文本");
+用法:--------将结果x传给id为demo的标签
+var person=prompt("请输入你的名字","jack");
+if (person!=null && person!="")
+{
+    x="你好 " + person + "今天感觉如何?";
+    document.getElementById("demo").innerHTML=x;
+}
+//--------(x为所出现的提示信息,此结果默认为"你好jack今天感觉如何?")--------
