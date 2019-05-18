@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+}
+a{
+    display: inline-block;
+    color: #b0b0b0;
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 40px;
+    margin-left:10px; 
+}
+a:hover{
+    animation: change-color 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes change-color{
+    100%{
+        color: #fff;
+    }
+}
+.ol{
+    margin-left: 0;
+}
+#top{
+    width: 100%;
+    display: flex;
+    background-color:#333; 
+    justify-content:space-between;
+    margin: 0 auto;
+}
+.left{
+    margin: 0 0 0 340px;
+}
+.right{
+    margin: 0 340px 0 0;
+}
