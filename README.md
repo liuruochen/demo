@@ -5,8 +5,8 @@
 ### 布局练习
 此列表是用html5+css3实现的一些布局demo
 * 小米模块
- * [demo]()
- * [代码地址]()
+  * [demo](https://15515179583.github.io/demo/miModule/index.html)
+  * [代码地址](https://github.com/15515179583/demo/tree/master/miModule)
 
 ### 音乐播放器
 暑假练习js做的一个小玩意(＾＿－)
