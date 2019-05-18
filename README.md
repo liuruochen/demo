@@ -37,3 +37,8 @@
 * 碰撞球
   * [demo](https://15515179583.github.io/demo/canvas/ball.html)
   * [代码地址](https://github.com/15515179583/demo/tree/master/canvas)
+
+### 一个小网站
+帮同学做的一个小网站，由多个静态页面组合
+* [demo](https://15515179583.github.io/demo/test/index.html)
+* [代码地址](https://github.com/15515179583/demo/tree/master/test)
