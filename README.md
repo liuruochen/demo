@@ -3,7 +3,7 @@
 我会把里面的内容做成目录展现出来
 
 ## 目录
->>* 音乐播放器
+>>* 音乐播放器 [demo](https://15515179583.github.io/demo/music/index.html)
 
 
 </br>
