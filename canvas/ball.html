@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>碰撞球</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id='mycanvas'></canvas>
+	</body>
+	<script type="text/javascript">
+		var mycanvas = document.querySelector("#mycanvas")//获取canvas元素
+		var cxt = mycanvas.getContext('2d')				//获取画笔
+		var logoColor = ['#CCFFFF','#FFFFCC','#CCFFCC','#FFCCCC']
+		var ballColor = ['#FFCCFF','#FFCC00','#CCFFFF','#CCFFFF','#99CCFF','#FF6666','#FF0033','#66CCCC','#9933CC','#9966CC','#0000FF','#FFFF00','#FF0033']
+		var ballSet= []
+		//console.log(ballSet)
+		init()
+		drawLogo()
+		
+		function init(){
+			mycanvas.width = window.innerWidth-5
+			mycanvas.height = window.innerHeight-5
+		}
+		function random(min,max){
+			return Math.random()*(max-min)+min
+
+		}
+		function Ball(){}//小球的构造函数
+		Ball.prototype={
+			init:function(){
+				this.x = random(0,mycanvas.width)
+				this.y = random(0,mycanvas.height)
+				this.r = random(3,8)
+				this.xSpeed = random(-1,1)
+				this.ySpeed = random(-1,1)
+				this.color = ballColor[Math.floor(random(0,ballColor.length))]
+			},
+			draw:function(){
+				cxt.fillStyle = this.color
+				cxt.beginPath()
+				cxt.arc(this.x,this.y,this.r,0,Math.PI*2)
+				//console.log(this.x,this.y,this.r)
+				cxt.closePath()
+				cxt.fill()
+				cxt.restore()
+			},
+			move:function(){
+				if(this.x<0||this.x>mycanvas.width)
+					this.xSpeed=-this.xSpeed
+				if(this.y<0||this.y>mycanvas.height)
+					this.ySpeed=-this.ySpeed
+				this.x+=this.xSpeed
+				this.y+=this.ySpeed
+				this.draw()
+				console.log(this.x,this.xSpeed)
+			}
+		}
+		function createBall(){
+			for(var i=0;i<100;i++){
+				var ball = new Ball()
+				ball.init()
+				ball.draw()
+				//ball.move()
+				ballSet.push(ball)
+			}
+			console.log(ballSet)
+		}
+		createBall()
+
+			setInterval(()=>{
+				cxt.clearRect(0,0,mycanvas.width,mycanvas.height)
+				drawLogo()
+				for(var i=0;i<ballSet.length;i++){
+					ballSet[i].move()
+				}	
+			},1000/60)
+
+		function drawLogo(){
+			cxt.font = '50px Arial'
+			cxt.fillStyle = logoColor[Math.floor(random(0,logoColor.length))]
+			cxt.textAlign = 'center'
+			cxt.textBaseLine = 'middle'
+			cxt.fillText('Smile', window.innerWidth/2,window.innerHeight/2)
+		}
+
+		
+
+		window.onresize = ()=>{
+			init()
+			drawLogo()
+		}
+		/*window.onload = ()=>{
+			createBall()
+			//move()
+		}*/
+	</script>
+</html>

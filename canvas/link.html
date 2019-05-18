@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>粒子连线</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="mycanvas" onmousemove = "getMouse()" onmouseout = "outMouse()"></canvas>
+	</body>
+	<script type="text/javascript">
+		const mycanvas = document.querySelector("#mycanvas")
+		const cxt = mycanvas.getContext("2d")
+		const logoColor = ['#CCFFFF','#FFFFCC','#CCFFCC','#FFCCCC']
+		var ballSet = []
+		var flag=false
+		init()
+		drawLogo()
+		function init(){
+			mycanvas.width = window.innerWidth-5
+			mycanvas.height = window.innerHeight-5
+		}
+		function random(min,max){
+			return Math.random()*(max-min)+min
+
+		}
+		function drawLogo(){
+			cxt.font = '50px Arial'
+			cxt.fillStyle = logoColor[Math.floor(random(0,logoColor.length))]
+			cxt.textAlign = 'center'
+			cxt.textBaseLine = 'middle'
+			cxt.fillText('Smile', window.innerWidth/2,window.innerHeight/2)
+		}
+		function Ball(){}//小球的构造函数
+		Ball.prototype={
+			init:function(){
+				this.x = random(0,mycanvas.width)
+				this.y = random(0,mycanvas.height)
+				this.r = 3
+				this.vx = random(-1,1)
+				this.vy = random(-1,1)
+				this.color = '#99CCFF'
+			},
+			draw:function(){
+				cxt.fillStyle = this.color
+				cxt.beginPath()
+				cxt.arc(this.x,this.y,this.r,0,Math.PI*2)
+				//console.log(this.x,this.y,this.r)
+				cxt.closePath()
+				cxt.fill()
+				cxt.restore()
+			},
+			move:function(){
+				if(this.x<0||this.x>mycanvas.width)
+					this.vx=-this.vx
+				if(this.y<0||this.y>mycanvas.height)
+					this.vy=-this.vy
+				this.x+=this.vx
+				this.y+=this.vy
+				this.draw()
+			}
+		}
+		function createBall(num){
+			for(let i=0;i<num;i++){
+				var ball = new Ball()
+				ball.init()
+				ball.draw()
+				ballSet.push(ball)
+			}
+		}
+		createBall(150)
+
+		function drawSolid(x1,y1,x2,y2){
+			
+			cxt.lineWidth=1
+			cxt.strokeStyle='#CCFFFF'
+			cxt.beginPath()//开始路径
+			cxt.moveTo(x1,y1)//开始点
+			cxt.lineTo(x2,y2)
+			cxt.closePath()//闭合路径
+			cxt.stroke()
+			cxt.restore()//释放路径(抬笔)
+		}
+
+		setInterval(()=>{
+				cxt.clearRect(0,0,mycanvas.width,mycanvas.height)
+				drawLogo()
+				for(var i=0,j;i<ballSet.length;i++){
+					ballSet[i].move()
+					for(j=i;j<ballSet.length;j++){
+						if(Math.pow(ballSet[i].x-ballSet[j].x,2)+Math.pow(ballSet[i].y-ballSet[j].y,2)<6000)
+						drawSolid(ballSet[i].x,ballSet[i].y,ballSet[j].x,ballSet[j].y)
+					}
+				}
+			},1000/60)
+		~function getMousePos(event) {
+            var e = event || window.event;
+           // return {'x':e.clientX,'y':clientY}
+        }()
+		function getMouse(){
+			/*var e =  window.event || e
+			arcX = e.screenX;
+			arcY = e.screenY;*/
+			if(flag){
+				ballSet.pop()
+				flag = false
+			}
+			var mouse = {'x':0,'y':0}
+			evt = window.event || evt	
+			//获取canvas相对于浏览器圆点的坐标
+			var rect = mycanvas.getBoundingClientRect();
+			//获取圆心的位置		
+			//获取鼠标在canvas上的位置
+			var arcX = (evt.pageX - rect.left) * (mycanvas.width / rect.width)
+			var arcY = (evt.pageY - rect.top) * (mycanvas.height / rect.height)
+			mouse.x = arcX
+			mouse.y = arcY
+			if(!flag){
+				var ball = new Ball()
+					ball.init()
+					ball.x=mouse.x
+					ball.y=mouse.y
+					ball.vx = 0
+					ball.vy = 0
+					ball.draw()
+					ballSet.push(ball)
+					flag=true
+			}
+		}
+		function outMouse(){
+			if(flag){
+				ballSet.pop()
+				flag = false
+			}
+		}
+		window.onresize = ()=>{
+			init()
+			drawLogo()
+		}
+	</script>
+</html>
