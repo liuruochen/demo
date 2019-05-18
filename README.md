@@ -5,5 +5,5 @@
 
 # 音乐播放器
 暑假练习js做的一个小玩意(＾＿－)
-+. [demo](https://15515179583.github.io/demo/music/index.html)
++ . [demo](https://15515179583.github.io/demo/music/index.html)
 
