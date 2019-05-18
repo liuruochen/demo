@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>heart</title>
+	<audio src="music/mp3/可能否.mp3" autoplay loop></audio>
+        <style>
+            body{
+                margin: 0;
+                background-color:#000 
+            }
+            span{
+                color: white;
+                font-size:70px;
+                display: block;
+                text-align: center; 
+            }
+            .wrap{
+                margin: 200px auto;
+                width: 200px;
+                height: 200px;
+                /*background-color: aqua;*/
+            }
+            .men{
+                width: 100px;
+                height: 200px;
+                
+                float: left;
+            }
+            .heart{
+                margin: 30px 0 0 0;
+                float: right;
+                animation: move 3s linear infinite;
+            }
+            @keyframes move{
+                0%{transform: scale(0.1) translate(-500px)}
+                100%{transform: translate(270px)}
+            }
+            .left,.right{
+                width: 50px;
+                height: 80px;
+                background-color: red;
+                float: left;
+                border-radius: 25px 25px 0 0;
+                box-shadow: 0 0 50px red;
+            }
+            .left{
+                transform: rotate(-45deg);
+            }
+            .right{
+                transform: translateX(-29px) rotate(45deg);
+            }
+            .head{
+                width: 50px;
+                height: 50px;
+                border: 1px solid #fff;
+                border-radius: 25px;
+            }
+            .body{
+                width: 100px;
+                height: 55px;
+                /*border:1px solid skyblue;*/ 
+               
+            }
+            .body-body{
+                float: left;
+                width: 25px;
+                height: 55px;
+                border-right:1px solid #fff; 
+            }
+            .body-hand-top{
+               /* float: left;*/
+               margin-left: 25px;
+                width: 35px;
+                height: 15px;
+                border-right: 1px solid #fff; 
+                border-bottom: 1px solid #fff; 
+                animation:  change-width 3s infinite;
+            }
+            .body-hand-bottom{
+                margin-left: 25px;
+                margin-top:10px; 
+                width: 35px;
+                height: 15px;
+                border-top: 1px solid #fff; 
+                border-right: 1px solid #fff; 
+                animation:  change-width 3s infinite;
+            }
+            @keyframes change-width{
+                100%{width: 50px;;}
+            }
+            .foot-left{
+                float: left;
+                height: 50px;
+                width: 40px;
+                border-top: 1px solid #fff;
+                transform: rotate(-45deg) translate(3px,11px);
+            }
+            .foot-right{
+                float: left;
+                width: 50px;
+                height: 25px;
+                border-top: 1px solid #fff;
+                border-right: 1px solid #fff;
+                transform: translateX(-14px);
+            }
+            .text{
+                animation: change-color 8s infinite alternate;
+            }
+            @keyframes change-color{
+                10%{color:red}
+                25%{color:orange}
+                45%{color:yellow}
+                65%{color:green}
+                85%{color:yellowgreen}
+                100%{color:blue}
+                20%{color:purple}
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrap">
+            <div class="men">
+                <div class="head"></div>
+                <div class="body">
+                    <div class="body-body"></div>
+                    <div class="body-hand-top"></div>
+                    <div class="body-hand-bottom"></div>
+                </div>
+                <div class="foot">
+                    <div class="foot-left"></div>
+                    <div class="foot-right"></div>
+                </div>
+            </div>
+            <div class="heart">
+                <div class="left">
+                </div>
+                <div class="right">
+                </div>
+            </div>
+        </div>  
+         
+    </body>
+</html>
