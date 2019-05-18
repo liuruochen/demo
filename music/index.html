@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>music</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="music">
+            <h3 class="music-name" id="title">一曲相思</h3>
+            <div class="music-background">
+                <div class="music-photo" id="music-photo" onclick="state();"></div>
+            </div>
+        </div>
+        <audio src="mp3/一曲相思.mp3" id="music" autoplay></audio>
+        <div class="contral">
+            <button id="style" class="btn btn0" onclick="random();">∑</button>
+            <button id="up" class="btn btn1" onclick="up();">《</button>
+            <button id="state" class="btn btn2" onclick="state();">★</button>
+            <button id="down" class="btn btn3" onclick="down();">》</button>
+            <button id="list" class="btn btn4">≡</button>
+        </div>
+    </div>
+    <div id="list-item">
+        <ol id="listItem" onmouseenter="appear();" onmouseleave="listAreaInit()">
+        </ol>
+    </div>  
+<script src="index.js"></script>
+</body>
+</html>
