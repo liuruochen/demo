@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="random.css">
+    <script src="random.js"></script>
+    <title>随机样例生成器</title>
+
+</head>
+
+<body>
+    <div id="main">
+            <h3>随机样例生成器</h3>
+            <div id="input">
+                <span class="input-text">请输入组数:</span><input type="text" id="group_number" class="input_are" value="1"><br><br>
+                <span class="input-text">请选择类型:</span>
+                <label><input type="radio" name="data_type" checked>int</label>
+                <label><input type="radio" name="data_type">char</label>
+                <label><input type="radio" name="data_type">string</label><br><br>
+                <span class="input-text">字母大小写:</span>
+                <label><input type="radio" name="char" checked>大写</label>
+                <label><input type="radio" name="char">小写</label>
+                <label><input type="radio" name="char">均有</label><br><br>
+                <span class="input-text">每组最少个数:</span><input type="text" id="GroupMinNumber" class="input_are" value="1"><br><br>
+                <span class="input-text">每组最大个数:</span><input type="text" id="GroupBigNumber" class="input_are" placeholder="若每组固定个数此处与上一处相同"><br><br>
+                <span class="input-text">请输最小值:</span><input type="text" id="data_min" class="input_are" value="1" ><br><br>
+                <span class="input-text">请输最大值:</span><input type="text" id="data_max" class="input_are" placeholder="若值固定则此处与上一处相同"><br><br>
+                <span class="input-text">是否显示每组个数?</span>
+                <label><input type="radio" name="display_number" checked>不显示</label>
+                <label><input type="radio" name="display_number">显示</label><br><br>
+                <button id="button" onclick="displayDate()">生成随机数据</button>
+            </div>
+            <textarea id="output"></textarea>
+    </div>
+</body>
+</html>

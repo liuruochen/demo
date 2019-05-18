@@ -1,0 +1,73 @@
+body{
+    background: linear-gradient(315deg,rgb(127, 213, 247),rgb(158, 234, 240));
+    margin: 0;
+    text-align: center;
+}
+#main{
+    margin: 2% auto;
+}
+h3{
+    font-size: 25px;
+}
+#input{
+    text-align: left;
+    font-size: 18px;
+    margin: 0 20%;
+    /*border:  2px solid red;*/
+}
+.input-text{
+    float: left;
+    margin: 0 3% 0 28%;
+    width: 160px;
+    border: 1px solid green;
+}
+.input_are{
+    width: 200px;
+    height: 25px;
+    background: transparent;
+}
+#button{
+    width: 150px;
+    height: 50px;
+    margin: 0 40%;
+    background: transparent;
+}
+#button:hover{
+    animation: change 3s infinite ;
+}
+@keyframes change{
+    0%{
+        box-shadow: 0 0 100px rgb(33, 143, 177);
+    }
+    30%{
+        /*transform: translate(0,-10px);*/
+        color: aqua;
+        box-shadow: 0 0 100px rgb(47, 0, 255);
+    }
+    60%{
+        color: rgb(124, 39, 202);
+        box-shadow: 0 0 100px rgb(177, 33, 170);
+    }
+    100%{
+        box-shadow: 0 0 100px red;
+        color: black;
+    }
+}
+#button:active{
+    animation: jump 2s infinite alternate;
+}
+@keyframes jump{
+    0%{
+        transform: translate(0,-10px);
+    }
+    50%{
+        transform: translate(0,-10px);
+    }
+    100%{
+        transform: translate(0,-10px);
+    }
+}
+#output{
+    height: 350px;
+    width: 58%;
+}
