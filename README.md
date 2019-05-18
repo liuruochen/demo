@@ -18,6 +18,11 @@
   * [demo]()
   * [代码地址]()
 
+### 随机样例生成器
+一个样例生成器，可以随机生成oj的测试数据
++ [demo](https://15515179583.github.io/demo/random/random.html)
++ [代码地址](https://github.com/15515179583/demo/tree/master/random)
+
 ### 音乐播放器
 暑假练习js做的一个小玩意(＾＿－)
 + [demo](https://15515179583.github.io/demo/music/index.html)
